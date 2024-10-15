@@ -87,6 +87,7 @@ target.scrollIntoView({ behavior: 'smooth' });
 
 </script>
 
+<style>
 * {
     box-sizing: border-box;
 }
@@ -260,7 +261,7 @@ target.scrollIntoView({ behavior: 'smooth' });
         scale: 200%;
     }
 }
-
+</style>
 
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
