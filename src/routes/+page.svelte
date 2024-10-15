@@ -88,7 +88,7 @@ target.scrollIntoView({ behavior: 'smooth' });
 </script>
 
 <style>
-* {
+    * {
     box-sizing: border-box;
 }
 
@@ -103,6 +103,7 @@ target.scrollIntoView({ behavior: 'smooth' });
     overflow-y: auto; /* Allow vertical scrolling */
     width: 100%;
 }
+
 
 .main-container {
     display: flex;
@@ -121,7 +122,7 @@ target.scrollIntoView({ behavior: 'smooth' });
     align-items: flex-start;
 }
 
-/* Fixed hover issue by setting padding/margins specifically for social links */
+
 .nav {
     display: flex;
     flex-direction: column;
@@ -148,7 +149,6 @@ target.scrollIntoView({ behavior: 'smooth' });
     transition: color 0.3s, transform 0.3s, padding-left 0.3s;
     padding-left: 10px;
 }
-
 .nav a.active {
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -158,7 +158,7 @@ target.scrollIntoView({ behavior: 'smooth' });
     color: rgb(255, 255, 255);
 }
 
-/* Adjust the hover line to avoid overlap */
+/* Pseudo-element for the line */
 .nav li::before {
     content: '';
     position: absolute;
@@ -172,65 +172,175 @@ target.scrollIntoView({ behavior: 'smooth' });
 }
 
 .nav li:hover::before {
-    width: 50px;
+    width: 50px; /* Expand the line to full width on hover */
 }
 
 .nav li:hover a {
-    padding-left: 60px;
+    padding-left: 60px; /* Increase padding on hover to shift text to the right */
 }
 
+
 .text-container {
-    width: 100%;
-    text-align: left;
-    padding: 2rem;
-    z-index: 2;
+  width: 100%; /* Take full width for text */
+  text-align: left; /* Align text to the left */
+  padding: 2rem; /* Padding for spacing */
+  z-index: 2; /* Ensure this is above the glow effect */
 }
 
 .info-container {
-    width: 50%;
-    height: 100vh;
-    text-align: left;
-    padding: 2rem;
-    overflow-y: scroll;
-    z-index: 2;
+  width: 50%; /* Fixed width for info */
+  height: 100vh;
+  text-align: left; /* Align text to the left */
+  padding: 2rem; /* Add padding for spacing */
+  overflow-y: scroll; /* Keep vertical scrolling enabled */
+  scrollbar-width: none; /* For Firefox */
+  z-index: 2; /* Ensure this is above the glow effect */
 }
 
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
 .info-container::-webkit-scrollbar {
-    display: none;
+  display: none; /* Hide the scrollbar */
 }
 
+
+h1 {
+  font-size: 3.25rem; /* Title size */
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem; /* Subtitle size */
+  color: #f6fbfd; /* Subtitle color */
+    margin-bottom: 10px; /* Space below subtitles */
+  margin: 0.5rem 0; /* Space between title and subtitle */
+}
+
+.paragraph {
+  font-size: 1.0 rem; /* Smaller subtitle size */
+  color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
+  margin-top: 20px; /* No extra margin */
+}
+
+.bold-link {
+    text-decoration: none;
+    color: aliceblue;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition for both color and underline */
+}
+
+.bold-link:hover {
+    color: rgb(0, 252, 134);
+}
+
+/* Styles for the resume link */
+#resume_link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid rgb(0, 255, 191);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#resume_link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgb(0, 255, 191);
+    border-color: rgba(255, 255, 255, 0.226);
+}
+
+/* Styles for the portfolio link */
+#portfolio_link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid rgb(0, 255, 191);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#portfolio_link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgb(0, 255, 191);
+    border-color: rgba(255, 255, 255, 0.226);
+}
+
+/* Icon styling (optional) */
+#resume_link i, #portfolio_link i {
+    margin-left: 5px; /* Adds space between the text and icon */
+}
+
+
+
+/* Glow effect */
+.glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px; /* Large size to go beyond the viewport */
+  height: 2000px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 170, 255, 0.15) 0%,
+    rgba(0, 170, 255, 0.05) 30%,
+    rgba(0, 170, 255, 0.03) 60%,
+    rgba(0, 170, 255, 0.01) 100%,
+    transparent 100%
+  );
+  border-radius: 50%; /* Keep the glow circular */
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 1;
+  z-index: 1; /* Ensure this is below the text and info containers */
+}
+
+/* Center the glow around the pointer */
+.glow-effect {
+  transform: translate(calc(var(--mouseX) - 750px), calc(var(--mouseY) - 750px));
+}
+
+p {
+  font-size: 1.2rem; /* Adjust font size for the paragraph */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Social Links */
 .social-links {
-    display: flex;
-    justify-content: center;
-    margin: 20px 20px;
-    z-index: 3;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center the social links */
+    margin: 20px 20px; /* Space above social links */
+         z-index: 3; /* Ensure this is above the glow effect */
 }
 
 .social-links ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Align items horizontally */
 }
 
 .social-links a {
-    margin: 0 10px;
+    margin: 0 10px; /* Space between social links */
     color: rgba(240, 229, 252, 0.6);
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
 }
+
+.social-links i {
+    padding: 20px;
+    scale: 325%;
+}
+
 
 .social-links a:hover {
-    color: rgba(0, 170, 255, 1);
+    color: rgba(0, 170, 255, 1); /* Change color on hover */
 }
-
-/* Reduced hover area for social links */
-.social-links i {
-    padding: 10px; /* Adjust padding to reduce hover effect area */
-    scale: 250%;
-}
-
-/* Make sure no overflow occurs on mobile */
 @media (max-width: 768px) {
+  * {
+      box-sizing: border-box; /* Ensure padding is included in width calculations */
+  }
+
     .main-container {
         flex-direction: column;
         width: 100%;
@@ -238,29 +348,36 @@ target.scrollIntoView({ behavior: 'smooth' });
         overflow-x: hidden; /* Prevent horizontal overflow on mobile */
     }
 
-    .container {
-        width: 100%;
-        padding: 20px;
-        margin: 10px auto;
-    }
+  .container {
+    width: 100%; /* Each container takes full width */
+    padding: 20px; /* Keep padding for spacing inside the containers */
+    margin: 10px auto; /* Auto margin horizontally will center the element */
+  }
 
-    .text-container,
-    .info-container {
+  .text-container,
+  .info-container {  
         width: 100%;
         padding: 20px;
         margin: 0;
         height: auto;
-    }
+  }
 
-    .social-links {
-        justify-content: flex-start;
-        margin-left: 10px;
-    }
+  .short-text {
+    display: none; /* Hide short text by default */
+  }
 
-    .social-links i {
-        scale: 200%;
-    }
+  .social-links {
+    justify-content: flex-start; /* Align social links to the left */
+    margin-left: 10px; /* Add a little margin for space from the edge */
+  }
+
+  /* Adjust icon size for smaller screens */
+  .social-links i {
+    scale: 200%; /* Reduce the size of the icons on smaller screens */
+  }
 }
+
+
 </style>
 
 <head>
