@@ -334,12 +334,42 @@ p {
 
 @media (max-width: 768px) {
     .main-container {
-        flex-direction: column; /* Stack items vertically on small screens */
+        flex-direction: column; /* Stack the containers vertically */
+        width: 100%; /* Take up the full width of the screen */
+        margin: 20px 0; /* Add margin on the top and bottom */
     }
+
     .container {
-        width: 100%; /* Full width for smaller screens */
+        width: 100%; /* Each container takes full width */
+        padding: 20px; /* Keep padding for spacing inside the containers */
+        margin: 0 10px; /* Add slight margins on the left and right */
+    }
+
+    .nav ul {
+        padding-left: 0px; /* Reset padding for nav in mobile view */
+    }
+
+    .nav li {
+        margin: 5px 0; /* Adjust spacing between nav items */
+    }
+
+    .text-container, .info-container {
+        text-align: left; /* Ensure text is left-aligned */
+        padding: 15px; /* Add padding for better readability on small screens */
+        margin: 10px 0; /* Add margin for spacing between stacked containers */
+    }
+
+    .social-links {
+        justify-content: flex-start; /* Align social links to the left */
+        margin-left: 10px; /* Add a little margin for space from the edge */
+    }
+
+    /* Adjust icon size for smaller screens */
+    .social-links i {
+        scale: 200%; /* Reduce the size of the icons on smaller screens */
     }
 }
+
 
 
 </style>
