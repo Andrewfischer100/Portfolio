@@ -339,7 +339,6 @@
     }
     
     .social-links i {
-        padding: 20px;
         scale: 325%;
     }
     
