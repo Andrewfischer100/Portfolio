@@ -38,7 +38,7 @@
 }
 
 .title {
-    font-size: x-small;
+    font-size: medium;
     color: #f6fbfd;
     margin: 0; /* Remove extra space around the title */
     line-height: 1.2; /* Adjust line height to align properly with the image */
@@ -50,7 +50,7 @@
 }
 
 .description {
-    font-size: x-small;
+    font-size: smaller;
     color: rgba(246, 237, 252, 0.425);
     margin: 10px 0 12px; /* Space above and below description */
     line-height: 135%;
@@ -68,7 +68,7 @@
     margin-right: 5px;
     margin-bottom: 5px;
     color: white; 
-    font-size: 0.5rem;
+    font-size: 1rem;
 }
 
 a {
