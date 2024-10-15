@@ -305,10 +305,11 @@
       z-index: 1; /* Ensure this is below the text and info containers */
     }
     
-    /* Center the glow around the pointer */
     .glow-effect {
-      transform: translate(calc(var(--mouseX) - 750px), calc(var(--mouseY) - 750px));
-    }
+    /* Adjust the transform to take the element size into account */
+    transform: translate(calc(var(--mouseX) - 50%), calc(var(--mouseY) - 50%));
+}
+
     
     p {
       font-size: 1.2rem; /* Adjust font size for the paragraph */
