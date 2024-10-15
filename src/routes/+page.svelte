@@ -271,8 +271,8 @@ h2 {
 
 
 .social-links i {
-    gap: 10px;
-    scale: 250%;
+    gap: 50px;
+    scale: 325%;
 }
 
 /* Glow effect */
