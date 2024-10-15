@@ -250,18 +250,18 @@ h2 {
 #portfolio_link {
     display: inline-block;
     padding: 10px 15px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(0, 255, 191);
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
 #portfolio_link:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    color: #000;
-    border-color: rgba(0, 0, 0, 0.4);
+    color: rgb(0, 255, 191);
+    border-color: rgba(255, 255, 255, 0.226);
 }
 
 /* Icon styling (optional) */
