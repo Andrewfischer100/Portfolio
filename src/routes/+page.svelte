@@ -287,14 +287,7 @@ p {
     color: rgba(0, 170, 255, 1); /* Change color on hover */
 }
 
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column; /* Stack items vertically on small screens */
-    }
-    .container {
-        width: 100%; /* Full width for smaller screens */
-    }
-}
+
 
 </style>
 
