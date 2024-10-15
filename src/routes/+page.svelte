@@ -227,9 +227,8 @@ h2 {
 .bold-link:hover {
     color: rgb(0, 252, 134);
 }
-
-i {
-    scale: 150%;
+.social-links i {
+    scale: 250%;
 }
 
 /* Glow effect */
@@ -237,8 +236,8 @@ i {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1500px; /* Large size to go beyond the viewport */
-  height: 1500px;
+  width: 2000px; /* Large size to go beyond the viewport */
+  height: 2000px;
   background: radial-gradient(
     circle,
     rgba(0, 170, 255, 0.15) 0%,
@@ -373,9 +372,9 @@ p {
     </section>
 
 
-  <a href="/images/resume_AF.pdf"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+  <a href="/images/resume_AF.pdf"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
 <br><br>
-  <a href="https://afisch2014315a.myportfolio.com/"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+  <a href="https://afisch2014315a.myportfolio.com/"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
 
 
     <section id="projects">
