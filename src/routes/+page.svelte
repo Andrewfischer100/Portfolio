@@ -317,7 +317,7 @@
       line-height: 1.5; /* Line height for readability */
     }
     
-  /* Social Links */
+/* Social Links */
 .social-links {
     display: flex; /* Flexbox for horizontal alignment */
     justify-content: center; /* Center the social links */
@@ -338,12 +338,12 @@
     text-decoration: none; /* Remove underline */
     padding: 10px; /* Reduced padding to limit hover bleed */
     position: relative; /* Relative positioning for pseudo-elements */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+    transition: color 0.3s ease; /* Smooth transition for color only */
 }
 
+/* Change color to greenish blue on hover */
 .social-links a:hover {
-    color: rgba(240, 229, 252, 1); /* Full color on hover */
-    transform: scale(1.1); /* Slight scale on hover */
+    color: rgba(0, 170, 255, 1); /* Change to greenish blue on hover */
 }
 
 /* Icon Styling */
@@ -368,7 +368,6 @@
 .social-links a:hover::before {
     opacity: 1; /* Show the shadow/glow on hover */
 }
-
     @media (max-width: 768px) {
       * {
           box-sizing: border-box; /* Ensure padding is included in width calculations */
