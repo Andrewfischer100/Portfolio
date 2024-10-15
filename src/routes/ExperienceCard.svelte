@@ -24,7 +24,7 @@
 }
 
 .title, .company {
-    font-size: x-small;
+    font-size: small;
     color: #f6fbfd;
     margin: 0;
     line-height: 1.2;
@@ -37,7 +37,7 @@
 }
 
 .description {
-    font-size: x-small;
+    font-size: small;
 }
 
 .skills {
@@ -53,7 +53,7 @@
     margin-right: 5px;
     margin-bottom: 5px;
     color: white; /* Skill text color */
-    font-size: 0.5rem;
+    font-size: 1rem;
 }
 
 
@@ -65,7 +65,7 @@
     }
 
     .dates {
-        font-size: xx-small;
+        font-size: small;
         color: rgba(150, 208, 238, 0.8);
         margin-top: 0; /* Ensures the dates align with the top of the title */
     }
@@ -78,7 +78,7 @@
 
 
     .description {
-        font-size: x-small;
+        font-size: small;
     }
 
     .skills {
