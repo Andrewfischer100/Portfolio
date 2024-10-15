@@ -363,7 +363,7 @@ p {
   }
 
   .short-text {
-    display: none; /* Hide short text by default */
+    display:contents; /* Hide short text by default */
   }
 
   .social-links {
@@ -425,27 +425,14 @@ p {
 </div>
 
 <div class="info-container">
-    <div class="long-text">
-    <p class="paragraph">
-        Hello and welcome to my portfolio! I’m Andrew, and I presently work as an <a href="https://pulitzerarts.org/" class="bold-link" target="_blank" >art handler</a> and <a href="https://mohistory.org/museumhttps://mohistory.org/museum" class="bold-link" target="_blank">exhibits installation specialist</a> for local museums in the Saint Louis Area. On the side, I work as a bartender in the <a href="https://www.seedsproutspoon.com/" class="bold-link" target="_blank" >Weddings and Events industry!</a> My career has taken a diverse path, blending my passion for design with my background in education and technology.
 
-        Before stepping into my current roles, I spent several years at UPS as a Training Manager. This experience allowed me to leverage my education degree to develop talent and improve building production. With the help of UPS's tuition assistance program, I explored my true interest in design, which has become a key part of my professional journey.
-        
-        In 2023, I completed a <a href="https://www.launchcode.org/" class="bold-link" target="_blank" >six-month coding bootcamp</a>, further expanding my skill set to include technology and programming. This blend of design and technical expertise allows me to approach projects with a unique perspective.
-        
-        When I’m not immersed in designing or programming, you’ll find me cooking, studying for my personal training certificate, or enjoying quality time with my partner. I believe in maintaining a balance between my professional and personal interests, which adds depth to my work and life.
-        
-        Thank you for taking the time to visit my portfolio. I look forward to connecting and exploring potential collaborations!
-               
-    </p>
-</div>
-<div class="short-text">"
+<div class="short-text">    <p class="paragraph">
     Welcome to my portfolio! I’m Andrew, an <a href="https://pulitzerarts.org/" class="bold-link" target="_blank">art handler</a> and <a href="https://mohistory.org/museum" class="bold-link" target="_blank">exhibits installation specialist</a> in Saint Louis. I also bartend in the <a href="https://www.seedsproutspoon.com/" class="bold-link" target="_blank">Weddings and Events industry</a>.
 
     Previously, I was a Training Manager at UPS, where I combined my education background with my passion for design. In 2023, I completed a <a href="https://www.launchcode.org/" class="bold-link" target="_blank">coding bootcamp</a>, enhancing my technical skills. 
 
     In my free time, I enjoy cooking and studying for my personal training certificate. Thank you for visiting my portfolio!
-    
+</p>
 </div>
 
     <section id="experience">
