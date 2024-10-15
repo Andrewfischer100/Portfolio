@@ -1,6 +1,8 @@
 <script>
     import ExperienceCard from './ExperienceCard.svelte'; // Adjust the path as necessary
     import ProjectCard from './ProjectCard.svelte'; // Adjust the import path as needed
+    import { fly } from 'svelte/transition';
+    
     const experiences = [
     
     {
@@ -457,19 +459,21 @@
     </p>
     </div>
     
-        <section id="experience">
+    <section id="experience">
+        {#each experiences as exp (exp.positionTitle)} <!-- Keying by positionTitle -->
+            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div -->
+                <ExperienceCard 
+                    startDate={exp.startDate}
+                    endDate={exp.endDate}
+                    positionTitle={exp.positionTitle}
+                    companyName={exp.companyName}
+                    description={exp.description}
+                    skills={exp.skills}
+                />
+            </div>
+        {/each}
+    </section>
     
-        {#each experiences as exp}
-        <ExperienceCard 
-            startDate={exp.startDate}
-            endDate={exp.endDate}
-            positionTitle={exp.positionTitle}
-            companyName={exp.companyName}
-            description={exp.description}
-            skills={exp.skills}
-        />
-    {/each}
-        </section>
     
     
       <a href="/images/resume_AF.pdf" id="resume_link"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
@@ -477,8 +481,9 @@
       <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
     
     
-        <section id="projects">
-            {#each projects as project}
+      <section id="projects">
+        {#each projects as project (project.title)} <!-- Keying by project title -->
+            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div -->
                 <ProjectCard 
                     title={project.title}
                     description={project.description}
@@ -486,8 +491,9 @@
                     skills={project.skills}
                     repoUrl={project.link}
                 />
-            {/each}
-        </section>
+            </div> <!-- Close the div wrapping the ProjectCard -->
+        {/each} <!-- Close the each block -->
+    </section>
         <a href="https://github.com/Andrewfischer100"  class="bold-link" target="_blank"> View my Github <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
     </div> 
     
