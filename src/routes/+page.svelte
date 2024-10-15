@@ -284,7 +284,8 @@ p {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<section class="main-container" on:mousemove={handleMouseMove}>
+<!-- svelte-ignore a11y-no-redundant-roles -->
+<section class="main-container" on:mousemove={handleMouseMove} role="region">
 <div class="glow-effect" style="--mouseX: {mouseX}px; --mouseY: {mouseY}px;"></div>
 
 <div class="container">
