@@ -109,7 +109,6 @@
         display: flex;
         flex-direction: row;
         max-width: 1200px;
-        height: 100vh; /* Ensure the main container fills the viewport height */
         margin: 0 auto;
         overflow: hidden; /* Prevent both horizontal and vertical overflow */
     }
