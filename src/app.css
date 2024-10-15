@@ -1,0 +1,11 @@
+/* app.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a0731;
+    color: #00aaff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
