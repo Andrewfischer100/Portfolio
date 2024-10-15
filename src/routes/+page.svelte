@@ -99,19 +99,27 @@ target.scrollIntoView({ behavior: 'smooth' });
 }
 
 .main-container {
-  display: flex; /* Use flexbox for layout */
-  height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Change to column on smaller screens */
+    height: auto; /* Allow the container to adjust based on content */
+    max-width: 1200px; /* Keep the max width */
+    margin: 0 auto; /* Center the container */
 }
 
 .container {
-  position: relative;
-  width: 50%; /* Fixed width for the main container */
-  padding: 20px; /* Add padding for spacing */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Align items to the start */
-  align-items: flex-start; /* Align items to the top */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding for spacing */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: flex-start; /* Align items to the top */
 }
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
 .nav {
     display: flex;
     flex-direction: column; /* Stack links vertically */
@@ -278,6 +286,16 @@ p {
 .social-links a:hover {
     color: rgba(0, 170, 255, 1); /* Change color on hover */
 }
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
 </style>
 
 <head>
