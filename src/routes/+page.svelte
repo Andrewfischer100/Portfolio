@@ -285,9 +285,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200vw; /* Make it wider to prevent clipping */
-  height: 200vh; /* Make it taller to prevent clipping */
-  overflow: visible; /* Allow the glow to extend beyond the container */
+  width: 200vw; /* Equal width and height for a circle */
+  height: 200vw; /* Match the width to maintain a circular shape */
+  overflow: hidden;
   background: radial-gradient(
     circle,
     rgba(0, 170, 255, 0.15) 0%,
@@ -296,12 +296,14 @@
     rgba(0, 170, 255, 0.01) 100%,
     transparent 100%
   );
-  border-radius: 50%; /* Ensure it's circular */
+  border-radius: 50%; /* Keep it circular */
   pointer-events: none;
   transition: opacity 0.2s ease-out;
   opacity: 1;
   z-index: 1;
+  transform: translate(calc(var(--mouseX) - 100vw), calc(var(--mouseY) - 100vw)); /* Adjust based on size */
 }
+
 
     
     .glow-effect {
