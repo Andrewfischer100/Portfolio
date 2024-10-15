@@ -114,14 +114,15 @@
     overflow-y: auto; /* Allow scrolling when content exceeds height */
 }
     
-    .container {
-        width: 50%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
+.container {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden; /* Ensure no child elements overflow */
+}
     
     
     .nav {
@@ -285,8 +286,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 2000px; /* Large size to go beyond the viewport */
-      height: 2000px;
+      width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
       background: radial-gradient(
         circle,
         rgba(0, 170, 255, 0.15) 0%,
@@ -362,7 +365,9 @@
       }
     
       .text-container,
-      .info-container {  
+      .info-container { 
+        max-width: 100%;
+        overflow-y: auto; 
             width: 100%;
             padding: 20px;
             margin: 0;
