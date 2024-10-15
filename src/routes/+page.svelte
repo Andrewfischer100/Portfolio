@@ -106,12 +106,13 @@
     
     
     .main-container {
-        display: flex;
-        flex-direction: row;
-        max-width: 1200px;
-        margin: 0 auto;
-        overflow: hidden; /* Prevent both horizontal and vertical overflow */
-    }
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    min-height: 100vh; /* Changed from height: 100vh to min-height */
+    margin: 0 auto;
+    overflow-y: auto; /* Allow scrolling when content exceeds height */
+}
     
     .container {
         width: 50%;
@@ -362,7 +363,6 @@
     
       .text-container,
       .info-container {  
-        max-height: 100vh;
             width: 100%;
             padding: 20px;
             margin: 0;
