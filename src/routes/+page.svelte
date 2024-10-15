@@ -96,18 +96,19 @@ target.scrollIntoView({ behavior: 'smooth' });
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   overflow: hidden;
+  width: 100%;
 }
 
 .main-container {
     display: flex;
-    flex-direction: column; /* Change to column on smaller screens */
+    flex-direction: row; /* Change to column on smaller screens */
     height: auto; /* Allow the container to adjust based on content */
     max-width: 1200px; /* Keep the max width */
     margin: 0 auto; /* Center the container */
 }
 
 .container {
-    width: 100%; /* Full width */
+    width: 50%; /* Full width */
     padding: 20px; /* Padding for spacing */
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -115,10 +116,7 @@ target.scrollIntoView({ behavior: 'smooth' });
     align-items: flex-start; /* Align items to the top */
 }
 
-img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-}
+
 
 .nav {
     display: flex;
@@ -287,6 +285,14 @@ p {
     color: rgba(0, 170, 255, 1); /* Change color on hover */
 }
 
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .container {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
 
 
 </style>
@@ -365,7 +371,7 @@ p {
 
   <a href="/images/resume_AF.pdf"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
 <br><br>
-  <a href="/images/resume_AF.pdf"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
+  <a href="https://afisch2014315a.myportfolio.com/"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
 
 
     <section id="projects">

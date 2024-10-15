@@ -33,6 +33,8 @@
     border-radius: 4px;
     object-fit: cover;
     margin-right: 16px; /* Space between image and text */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .title {
