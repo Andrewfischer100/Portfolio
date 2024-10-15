@@ -87,303 +87,180 @@ target.scrollIntoView({ behavior: 'smooth' });
 
 </script>
 
-<style>
-    * {
+* {
     box-sizing: border-box;
 }
 
 :global(body) {
-  margin: 0;
-  padding: 0;
-  background-color: #1a0731; /* Dark blue-purple background */
-  color: #f6fbfd; /* Azure blue text */
-  font-family: 'Roboto', sans-serif;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto; /* Allow vertical scrolling */
-  width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1a0731; /* Dark blue-purple background */
+    color: #f6fbfd; /* Azure blue text */
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    width: 100%;
 }
 
-
 .main-container {
-  display: flex;
-  flex-direction: row; /* Change to column on smaller screens */
-  height: auto; /* Allow the container to adjust based on content */
-  max-width: 1200px; /* Keep the max width */
-  margin: 0 auto; /* Center the container */
-  overflow-x: hidden; /* Prevent horizontal overflow
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Prevent both horizontal and vertical overflow */
 }
 
 .container {
-  width: 50%; /* Full width */
-  padding: 20px; /* Padding for spacing */
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Align items to the start */
-  align-items: flex-start; /* Align items to the top */
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-
-
+/* Fixed hover issue by setting padding/margins specifically for social links */
 .nav {
     display: flex;
-    flex-direction: column; /* Stack links vertically */
-    z-index: 3; /* Ensure this is above the glow effect */
+    flex-direction: column;
+    z-index: 3;
     margin-top: -30px;
     padding-left: 30px;
 }
 
 .nav ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav li {
-    margin: 10px 0; /* Space between nav items */
-    position: relative; /* Position relative to allow absolute positioning of pseudo-element */
+    margin: 10px 0;
+    position: relative;
 }
 
 .nav a {
-    color: rgba(238, 196, 255, 0.8); /* Color for nav links */
-    text-decoration: none; /* Remove underline */
-    font-size: 1em; /* Adjust font size */
-    transition: color 0.3s, transform 0.3s, padding-left 0.3s; /* Smooth color, transform, and padding change */
-    padding-left: 10px; /* Initial padding for spacing */
+    color: rgba(238, 196, 255, 0.8);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s, transform 0.3s, padding-left 0.3s;
+    padding-left: 10px;
 }
 
 .nav a.active {
-    color: rgb(255, 255, 255); /* Active color, same as hover */
-    font-weight: bold; /* Optional: make it bold */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 .nav a:hover {
-    color: rgb(255, 255, 255); /* Change color on hover */
+    color: rgb(255, 255, 255);
 }
 
-/* Pseudo-element for the line */
+/* Adjust the hover line to avoid overlap */
 .nav li::before {
-    content: ''; /* Required for the pseudo-element to work */
-    position: absolute; /* Position it relative to the li */
-    left: 0; /* Align it to the left */
-    top: 50%; /* Center it vertically */
-    width: 0px; /* Thickness of the line */
-    height: 1%; /* Make it the full height of the li */
-    background-color: rgba(238, 196, 255, 0.8); /* Color of the line */
-    transform: translateY(-50%); /* Center the line vertically */
-    transition: width 0.3s; /* Smooth transition for the line */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0px;
+    height: 1%;
+    background-color: rgba(238, 196, 255, 0.8);
+    transform: translateY(-50%);
+    transition: width 0.3s;
 }
 
 .nav li:hover::before {
-    width: 50px; /* Expand the line to full width on hover */
+    width: 50px;
 }
 
 .nav li:hover a {
-    padding-left: 60px; /* Increase padding on hover to shift text to the right */
+    padding-left: 60px;
 }
 
-
 .text-container {
-  width: 100%; /* Take full width for text */
-  text-align: left; /* Align text to the left */
-  padding: 2rem; /* Padding for spacing */
-  z-index: 2; /* Ensure this is above the glow effect */
+    width: 100%;
+    text-align: left;
+    padding: 2rem;
+    z-index: 2;
 }
 
 .info-container {
-  width: 50%; /* Fixed width for info */
-  height: 100vh;
-  text-align: left; /* Align text to the left */
-  padding: 2rem; /* Add padding for spacing */
-  
-  overflow-y: scroll; /* Keep vertical scrolling enabled */
-  scrollbar-width: none; /* For Firefox */
-  z-index: 2; /* Ensure this is above the glow effect */
+    width: 50%;
+    height: 100vh;
+    text-align: left;
+    padding: 2rem;
+    overflow-y: scroll;
+    z-index: 2;
 }
 
-/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
 .info-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
+    display: none;
 }
 
-
-h1 {
-  font-size: 3.25rem; /* Title size */
-  margin: 0;
-}
-
-h2 {
-  font-size: 2.5rem; /* Subtitle size */
-  color: #f6fbfd; /* Subtitle color */
-    margin-bottom: 10px; /* Space below subtitles */
-  margin: 0.5rem 0; /* Space between title and subtitle */
-}
-
-.paragraph {
-  font-size: 1.0 rem; /* Smaller subtitle size */
-  color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
-  margin-top: 20px; /* No extra margin */
-}
-
-.bold-link {
-    text-decoration: none;
-    color: aliceblue;
-    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition for both color and underline */
-}
-
-.bold-link:hover {
-    color: rgb(0, 252, 134);
-}
-
-/* Styles for the resume link */
-#resume_link {
-    display: inline-block;
-    padding: 10px 15px;
-    border: 1px solid rgb(0, 255, 191);
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-#resume_link:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: rgb(0, 255, 191);
-    border-color: rgba(255, 255, 255, 0.226);
-}
-
-/* Styles for the portfolio link */
-#portfolio_link {
-    display: inline-block;
-    padding: 10px 15px;
-    border: 1px solid rgb(0, 255, 191);
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-#portfolio_link:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: rgb(0, 255, 191);
-    border-color: rgba(255, 255, 255, 0.226);
-}
-
-/* Icon styling (optional) */
-#resume_link i, #portfolio_link i {
-    margin-left: 5px; /* Adds space between the text and icon */
-}
-
-
-.social-links i {
-    padding: 20px;
-    scale: 325%;
-}
-
-/* Glow effect */
-.glow-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2000px; /* Large size to go beyond the viewport */
-  height: 2000px;
-  background: radial-gradient(
-    circle,
-    rgba(0, 170, 255, 0.15) 0%,
-    rgba(0, 170, 255, 0.05) 30%,
-    rgba(0, 170, 255, 0.03) 60%,
-    rgba(0, 170, 255, 0.01) 100%,
-    transparent 100%
-  );
-  border-radius: 50%; /* Keep the glow circular */
-  pointer-events: none;
-  transition: opacity 0.2s ease-out;
-  opacity: 1;
-  z-index: 1; /* Ensure this is below the text and info containers */
-}
-
-/* Center the glow around the pointer */
-.glow-effect {
-  transform: translate(calc(var(--mouseX) - 750px), calc(var(--mouseY) - 750px));
-}
-
-p {
-  font-size: 1.2rem; /* Adjust font size for the paragraph */
-  line-height: 1.5; /* Line height for readability */
-}
-
-/* Social Links */
 .social-links {
-    display: flex; /* Flexbox for horizontal alignment */
-    justify-content: center; /* Center the social links */
-    margin: 20px 20px; /* Space above social links */
-         z-index: 3; /* Ensure this is above the glow effect */
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px;
+    z-index: 3;
 }
 
 .social-links ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    display: flex; /* Align items horizontally */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 .social-links a {
-    margin: 0 10px; /* Space between social links */
+    margin: 0 10px;
     color: rgba(240, 229, 252, 0.6);
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .social-links a:hover {
-    color: rgba(0, 170, 255, 1); /* Change color on hover */
+    color: rgba(0, 170, 255, 1);
 }
+
+/* Reduced hover area for social links */
+.social-links i {
+    padding: 10px; /* Adjust padding to reduce hover effect area */
+    scale: 250%;
+}
+
+/* Make sure no overflow occurs on mobile */
 @media (max-width: 768px) {
-  * {
-      box-sizing: border-box; /* Ensure padding is included in width calculations */
-  }
+    .main-container {
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0;
+        overflow-x: hidden; /* Prevent horizontal overflow on mobile */
+    }
 
-  .main-container {
-    flex-direction: column; /* Stack the containers vertically */
-    width: 100%; /* Take up the full width of the screen */
-    margin: 20px 0; /* Add margin on the top and bottom */
-    overflow-x: hidden; /* Prevent horizontal overflow */
-  }
+    .container {
+        width: 100%;
+        padding: 20px;
+        margin: 10px auto;
+    }
 
-  .container {
-    width: 100%; /* Each container takes full width */
-    padding: 20px; /* Keep padding for spacing inside the containers */
-    margin: 10px auto; /* Auto margin horizontally will center the element */
-  }
+    .text-container,
+    .info-container {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+        height: auto;
+    }
 
-  .text-container,
-  .info-container {
-    width: 100%; /* Full width for both text and info containers */
-    text-align: left; /* Ensure text is left-aligned */
-    padding: 20px; /* Add padding for better readability on small screens */
-    margin: 0; /* Remove margin */
-    overflow-y: auto; /* Allow scrolling if content exceeds height */
-    height: auto; /* Let the container expand naturally with the content */
-  }
+    .social-links {
+        justify-content: flex-start;
+        margin-left: 10px;
+    }
 
-  .short-text {
-    display: none; /* Hide short text by default */
-  }
-
-  .social-links {
-    justify-content: flex-start; /* Align social links to the left */
-    margin-left: 10px; /* Add a little margin for space from the edge */
-  }
-
-  /* Adjust icon size for smaller screens */
-  .social-links i {
-    scale: 200%; /* Reduce the size of the icons on smaller screens */
-  }
+    .social-links i {
+        scale: 200%;
+    }
 }
 
-
-</style>
 
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
