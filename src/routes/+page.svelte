@@ -227,7 +227,51 @@ h2 {
 .bold-link:hover {
     color: rgb(0, 252, 134);
 }
+
+/* Styles for the resume link */
+#resume_link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#resume_link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Styles for the portfolio link */
+#portfolio_link {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#portfolio_link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Icon styling (optional) */
+#resume_link i, #portfolio_link i {
+    margin-left: 5px; /* Adds space between the text and icon */
+}
+
+
 .social-links i {
+    gap: 10px;
     scale: 250%;
 }
 
@@ -372,9 +416,9 @@ p {
     </section>
 
 
-  <a href="/images/resume_AF.pdf"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
+  <a href="/images/resume_AF.pdf" id="resume_link"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
 <br><br>
-  <a href="https://afisch2014315a.myportfolio.com/"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
+  <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
 
 
     <section id="projects">
