@@ -337,7 +337,6 @@ p {
         flex-direction: column; /* Stack the containers vertically */
         width: 100%; /* Take up the full width of the screen */
         margin: 20px 0; /* Add margin on the top and bottom */
-        margin-right: 20px;
     }
 
     .container {
@@ -351,7 +350,7 @@ p {
     }
 
     .nav li {
-        margin: 8px 0; /* Adjust spacing between nav items */
+        margin: 5px 0; /* Adjust spacing between nav items */
     }
 
     .text-container, .info-container {
@@ -359,14 +358,13 @@ p {
         text-align: left; /* Ensure text is left-aligned */
         padding: 20px; /* Add padding for better readability on small screens */
         margin: 15px 0; /* Add margin for spacing between stacked containers */
-        margin-right: 15px;
         overflow-y: unset; /* Remove the scroll behavior */
         height: auto; /* Let the container expand naturally with the content */
     }
 
     .social-links {
         justify-content: flex-start; /* Align social links to the left */
-        margin-left: 5px; /* Add a little margin for space from the edge */
+        margin-left: 10px; /* Add a little margin for space from the edge */
     }
 
     /* Adjust icon size for smaller screens */
