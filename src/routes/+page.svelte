@@ -360,7 +360,6 @@ p {
 
   .nav li {
     margin: 5px 0; /* Adjust spacing between nav items */
-    scale: 200%;
 
   }
 
