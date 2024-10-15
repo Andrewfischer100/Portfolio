@@ -99,26 +99,27 @@ target.scrollIntoView({ behavior: 'smooth' });
   color: #f6fbfd; /* Azure blue text */
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  overflow: hidden;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: auto; /* Allow vertical scrolling */
   width: 100%;
 }
 
+
 .main-container {
-    display: flex;
-    flex-direction: row; /* Change to column on smaller screens */
-    height: auto; /* Allow the container to adjust based on content */
-    max-width: 1200px; /* Keep the max width */
-    margin: 0 auto; /* Center the container */
+  display: flex;
+  flex-direction: row; /* Change to column on smaller screens */
+  height: auto; /* Allow the container to adjust based on content */
+  max-width: 1200px; /* Keep the max width */
+  margin: 0 auto; /* Center the container */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
 }
 
 .container {
-    width: 50%; /* Full width */
-    padding: 20px; /* Padding for spacing */
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: flex-start; /* Align items to the start */
-    align-items: flex-start; /* Align items to the top */
+  width: 50%; /* Full width */
+  padding: 20px; /* Padding for spacing */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items to the start */
+  align-items: flex-start; /* Align items to the top */
 }
 
 
@@ -338,48 +339,45 @@ p {
 }
 
 @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column; /* Stack the containers vertically */
-        width: 100%; /* Take up the full width of the screen */
-        margin: 20px 0; /* Add margin on the top and bottom */
-    }
+  .main-container {
+    flex-direction: column; /* Stack the containers vertically */
+    width: 100%; /* Take up the full width of the screen */
+    margin: 20px 0; /* Add margin on the top and bottom */
+  }
 
-    .container {
-        width: 100%; /* Each container takes full width */
-        padding: 20px; /* Keep padding for spacing inside the containers */
-        margin: 10px auto; /* Auto margin horizontally will center the element and not exceed the width */
+  .container {
+    width: 100%; /* Each container takes full width */
+    padding: 20px; /* Keep padding for spacing inside the containers */
+    margin: 10px auto; /* Auto margin horizontally will center the element */
+  }
 
-    }
+  .nav ul {
+    padding-left: 0; /* Reset padding for nav in mobile view */
+  }
 
-    .nav ul {
-        padding-left: 0px; /* Reset padding for nav in mobile view */
-    }
+  .nav li {
+    margin: 5px 0; /* Adjust spacing between nav items */
+  }
 
-    .nav li {
-        margin: 5px 0; /* Adjust spacing between nav items */
-    }
+  .text-container, .info-container {
+    width: 100%; /* Full width for both text and info containers */
+    text-align: left; /* Ensure text is left-aligned */
+    padding: 20px; /* Add padding for better readability on small screens */
+    margin: 10px 0; /* Add margin for spacing between stacked containers */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    height: auto; /* Let the container expand naturally with the content */
+  }
 
-    .text-container, .info-container {
-        width: 100%; /* Full width for both text and info containers */
-        text-align: left; /* Ensure text is left-aligned */
-        padding: 20px; /* Add padding for better readability on small screens */
-        margin: 10px 0; /* Add margin for spacing between stacked containers */
-        overflow-y: unset; /* Remove the scroll behavior */
-        height: auto; /* Let the container expand naturally with the content */
-    }
+  .social-links {
+    justify-content: flex-start; /* Align social links to the left */
+    margin-left: 10px; /* Add a little margin for space from the edge */
+  }
 
-    .social-links {
-        justify-content: flex-start; /* Align social links to the left */
-        margin-left: 10px; /* Add a little margin for space from the edge */
-    }
-
-    /* Adjust icon size for smaller screens */
-    .social-links i {
-        scale: 200%; /* Reduce the size of the icons on smaller screens */
-    }
+  /* Adjust icon size for smaller screens */
+  .social-links i {
+    scale: 200%; /* Reduce the size of the icons on smaller screens */
+  }
 }
-
-
 
 </style>
 
