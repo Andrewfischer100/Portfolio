@@ -99,6 +99,7 @@ target.scrollIntoView({ behavior: 'smooth' });
   color: #f6fbfd; /* Azure blue text */
   font-family: 'Roboto', sans-serif;
   height: 100vh;
+  overflow-x: hidden;
   overflow-y: auto; /* Allow vertical scrolling */
   width: 100%;
 }
@@ -110,6 +111,7 @@ target.scrollIntoView({ behavior: 'smooth' });
   height: auto; /* Allow the container to adjust based on content */
   max-width: 1200px; /* Keep the max width */
   margin: 0 auto; /* Center the container */
+  overflow-x: hidden; /* Prevent horizontal overflow
   overflow-y: auto; /* Allow scrolling if content exceeds height */
 }
 
@@ -343,6 +345,7 @@ p {
     flex-direction: column; /* Stack the containers vertically */
     width: 100%; /* Take up the full width of the screen */
     margin: 20px 0; /* Add margin on the top and bottom */
+    overflow-x: hidden; /* Prevent horizontal overflow
   }
 
   .container {
@@ -357,6 +360,8 @@ p {
 
   .nav li {
     margin: 5px 0; /* Adjust spacing between nav items */
+    scale: 200%;
+
   }
 
   .text-container, .info-container {
@@ -367,6 +372,10 @@ p {
     overflow-y: auto; /* Allow scrolling if content exceeds height */
     height: auto; /* Let the container expand naturally with the content */
   }
+
+  .short-text {
+    display: none; /* Hide short text by default */
+}
 
   .social-links {
     justify-content: flex-start; /* Align social links to the left */
@@ -426,6 +435,7 @@ p {
 </div>
 
 <div class="info-container">
+    <div class="long-text">
     <p class="paragraph">
         Hello and welcome to my portfolio! I’m Andrew, and I presently work as an <a href="https://pulitzerarts.org/" class="bold-link" target="_blank" >art handler</a> and <a href="https://mohistory.org/museumhttps://mohistory.org/museum" class="bold-link" target="_blank">exhibits installation specialist</a> for local museums in the Saint Louis Area. On the side, I work as a bartender in the <a href="https://www.seedsproutspoon.com/" class="bold-link" target="_blank" >Weddings and Events industry!</a> My career has taken a diverse path, blending my passion for design with my background in education and technology.
 
@@ -438,6 +448,16 @@ p {
         Thank you for taking the time to visit my portfolio. I look forward to connecting and exploring potential collaborations!
                
     </p>
+</div>
+<div class="short-text">"
+    Welcome to my portfolio! I’m Andrew, an <a href="https://pulitzerarts.org/" class="bold-link" target="_blank">art handler</a> and <a href="https://mohistory.org/museum" class="bold-link" target="_blank">exhibits installation specialist</a> in Saint Louis. I also bartend in the <a href="https://www.seedsproutspoon.com/" class="bold-link" target="_blank">Weddings and Events industry</a>.
+
+    Previously, I was a Training Manager at UPS, where I combined my education background with my passion for design. In 2023, I completed a <a href="https://www.launchcode.org/" class="bold-link" target="_blank">coding bootcamp</a>, enhancing my technical skills. 
+
+    In my free time, I enjoy cooking and studying for my personal training certificate. Thank you for visiting my portfolio!
+    
+</div>
+
     <section id="experience">
 
     {#each experiences as exp}
