@@ -354,9 +354,12 @@ p {
     }
 
     .text-container, .info-container {
+        width: 100%; /* Full width for both text and info containers */
         text-align: left; /* Ensure text is left-aligned */
         padding: 15px; /* Add padding for better readability on small screens */
         margin: 10px 0; /* Add margin for spacing between stacked containers */
+        overflow-y: unset; /* Remove the scroll behavior */
+        height: auto; /* Let the container expand naturally with the content */
     }
 
     .social-links {
