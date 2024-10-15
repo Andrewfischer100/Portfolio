@@ -351,19 +351,6 @@
     font-size: 2rem; /* Use font size to control icon size */
 }
 
-/* Optional: Add a hover effect like a shadow or border without bleed */
-.social-links a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(240, 229, 252, 0.5); /* Glow effect on hover */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
 .social-links a:hover::before {
     opacity: 1; /* Show the shadow/glow on hover */
