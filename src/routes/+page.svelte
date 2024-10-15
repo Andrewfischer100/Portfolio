@@ -339,13 +339,16 @@ p {
 .social-links a:hover {
     color: rgba(0, 170, 255, 1); /* Change color on hover */
 }
-
 @media (max-width: 768px) {
+  * {
+      box-sizing: border-box; /* Ensure padding is included in width calculations */
+  }
+
   .main-container {
     flex-direction: column; /* Stack the containers vertically */
     width: 100%; /* Take up the full width of the screen */
     margin: 20px 0; /* Add margin on the top and bottom */
-    overflow-x: hidden; /* Prevent horizontal overflow
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
   .container {
@@ -354,27 +357,19 @@ p {
     margin: 10px auto; /* Auto margin horizontally will center the element */
   }
 
-  .nav ul {
-    padding-left: 0; /* Reset padding for nav in mobile view */
-  }
-
-  .nav li {
-    margin: 5px 0; /* Adjust spacing between nav items */
-
-  }
-
-  .text-container, .info-container {
+  .text-container,
+  .info-container {
     width: 100%; /* Full width for both text and info containers */
     text-align: left; /* Ensure text is left-aligned */
     padding: 20px; /* Add padding for better readability on small screens */
-    margin: 10px 0; /* Add margin for spacing between stacked containers */
+    margin: 0; /* Remove margin */
     overflow-y: auto; /* Allow scrolling if content exceeds height */
     height: auto; /* Let the container expand naturally with the content */
   }
 
   .short-text {
     display: none; /* Hide short text by default */
-}
+  }
 
   .social-links {
     justify-content: flex-start; /* Align social links to the left */
@@ -386,6 +381,7 @@ p {
     scale: 200%; /* Reduce the size of the icons on smaller screens */
   }
 }
+
 
 </style>
 
