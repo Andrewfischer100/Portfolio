@@ -285,8 +285,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 99vw; /* Equal width and height for a circle */
-  height: 99vw; /* Match the width to maintain a circular shape */
+  width: 40vw; /* Equal width and height for a circle */
+  height: 40vw; /* Match the width to maintain a circular shape */
   overflow: hidden;
   background: radial-gradient(
     circle,
