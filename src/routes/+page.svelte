@@ -362,34 +362,25 @@
           box-sizing: border-box; /* Ensure padding is included in width calculations */
       }
     
-        .main-container {
-            display: flex;
+      .main-container {
             flex-direction: column;
-            height: 100vh; /* Ensure the main container fills the viewport height */
+        }
+
+        .container {
             width: 100%;
-            margin: 0 auto;
-            overflow: hidden; /* Prevent both horizontal and vertical overflow */    }
+        }
     
-      .container {
-        width: 100%; /* Each container takes full width */
-        padding: 20px; /* Keep padding for spacing inside the containers */
-        margin: 10px auto; /* Auto margin horizontally will center the element */
-      }
+        .info-container {
+            width: 100%; /* Full width for small screens */
+            max-height: 40vh; /* Set a max-height for the container */
+            padding: 1rem;
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
     
-      .text-container,
-      .info-container { 
-        max-width: 100%;
-        overflow-y: auto; 
-            width: 100%;
-            padding: 20px;
-            margin: 0;
-            height: auto;
-      }
-    
-      .short-text {
-        display:contents; /* Hide short text by default */
-      }
-    
+        .glow-effect {
+            width: 60vw; /* Adjust width to be more responsive */
+            height: 60vw;
+
       .social-links {
         justify-content: flex-start; /* Align social links to the left */
         margin-left: 10px; /* Add a little margin for space from the edge */
