@@ -140,7 +140,7 @@ target.scrollIntoView({ behavior: 'smooth' });
 .nav a {
     color: rgba(238, 196, 255, 0.8); /* Color for nav links */
     text-decoration: none; /* Remove underline */
-    font-size: 0.75em; /* Adjust font size */
+    font-size: 1em; /* Adjust font size */
     transition: color 0.3s, transform 0.3s, padding-left 0.3s; /* Smooth color, transform, and padding change */
     padding-left: 10px; /* Initial padding for spacing */
 }
@@ -213,7 +213,7 @@ h2 {
 }
 
 .paragraph {
-  font-size: 1.5rem; /* Smaller subtitle size */
+  font-size: 1.0 rem; /* Smaller subtitle size */
   color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
   margin-top: 20px; /* No extra margin */
 }
@@ -226,6 +226,10 @@ h2 {
 
 .bold-link:hover {
     color: rgb(0, 252, 134);
+}
+
+i {
+    scale: 150%;
 }
 
 /* Glow effect */
