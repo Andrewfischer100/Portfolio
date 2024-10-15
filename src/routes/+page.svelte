@@ -201,19 +201,19 @@ target.scrollIntoView({ behavior: 'smooth' });
 
 
 h1 {
-  font-size: 2.25rem; /* Title size */
+  font-size: 3.25rem; /* Title size */
   margin: 0;
 }
 
 h2 {
-  font-size: 1.5rem; /* Subtitle size */
+  font-size: 2.5rem; /* Subtitle size */
   color: #f6fbfd; /* Subtitle color */
     margin-bottom: 10px; /* Space below subtitles */
   margin: 0.5rem 0; /* Space between title and subtitle */
 }
 
 .paragraph {
-  font-size: .85rem; /* Smaller subtitle size */
+  font-size: 1.5rem; /* Smaller subtitle size */
   color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
   margin-top: 20px; /* No extra margin */
 }
