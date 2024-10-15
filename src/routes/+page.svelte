@@ -88,6 +88,10 @@ target.scrollIntoView({ behavior: 'smooth' });
 </script>
 
 <style>
+    * {
+    box-sizing: border-box;
+}
+
 :global(body) {
   margin: 0;
   padding: 0;
@@ -96,6 +100,7 @@ target.scrollIntoView({ behavior: 'smooth' });
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal overflow */
   width: 100%;
 }
 
@@ -342,7 +347,8 @@ p {
     .container {
         width: 100%; /* Each container takes full width */
         padding: 20px; /* Keep padding for spacing inside the containers */
-        margin: 0 10px; /* Add slight margins on the left and right */
+        margin: 10px auto; /* Auto margin horizontally will center the element and not exceed the width */
+
     }
 
     .nav ul {
@@ -357,7 +363,7 @@ p {
         width: 100%; /* Full width for both text and info containers */
         text-align: left; /* Ensure text is left-aligned */
         padding: 20px; /* Add padding for better readability on small screens */
-        margin: 15px 0; /* Add margin for spacing between stacked containers */
+        margin: 10px 0; /* Add margin for spacing between stacked containers */
         overflow-y: unset; /* Remove the scroll behavior */
         height: auto; /* Let the container expand naturally with the content */
     }
