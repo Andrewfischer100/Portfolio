@@ -282,7 +282,7 @@
     
     
     .glow-effect {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 40vw; /* Equal width and height for a circle */
@@ -317,35 +317,58 @@
       line-height: 1.5; /* Line height for readability */
     }
     
-    /* Social Links */
-    .social-links {
-        display: flex; /* Flexbox for horizontal alignment */
-        justify-content: center; /* Center the social links */
-        margin: 20px 20px; /* Space above social links */
-             z-index: 3; /* Ensure this is above the glow effect */
-    }
-    
-    .social-links ul {
-        list-style-type: none; /* Remove bullet points */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
-        display: flex; /* Align items horizontally */
-    }
-    
-    .social-links a {
-        margin: 0 10px; /* Space between social links */
-        color: rgba(240, 229, 252, 0.6);
-        text-decoration: none; /* Remove underline */
-    }
-    
-    .social-links i {
-        scale: 325%;
-    }
-    
-    
-    .social-links a:hover {
-        color: rgba(0, 170, 255, 1); /* Change color on hover */
-    }
+  /* Social Links */
+.social-links {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center the social links */
+    margin: 20px 20px; /* Space around social links */
+    z-index: 3; /* Ensure this is above the glow effect */
+}
+
+.social-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Align items horizontally */
+}
+
+.social-links a {
+    margin: 0 10px; /* Space between social links */
+    color: rgba(240, 229, 252, 0.6); /* Initial color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Reduced padding to limit hover bleed */
+    position: relative; /* Relative positioning for pseudo-elements */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.social-links a:hover {
+    color: rgba(240, 229, 252, 1); /* Full color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Icon Styling */
+.social-links i {
+    font-size: 2rem; /* Use font size to control icon size */
+}
+
+/* Optional: Add a hover effect like a shadow or border without bleed */
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(240, 229, 252, 0.5); /* Glow effect on hover */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover::before {
+    opacity: 1; /* Show the shadow/glow on hover */
+}
+
     @media (max-width: 768px) {
       * {
           box-sizing: border-box; /* Ensure padding is included in width calculations */
