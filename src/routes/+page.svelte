@@ -281,29 +281,28 @@
     
     
     
-    /* Glow effect */
     .glow-effect {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw; /* Make it wider to prevent clipping */
+  height: 200vh; /* Make it taller to prevent clipping */
+  overflow: visible; /* Allow the glow to extend beyond the container */
+  background: radial-gradient(
+    circle,
+    rgba(0, 170, 255, 0.15) 0%,
+    rgba(0, 170, 255, 0.05) 30%,
+    rgba(0, 170, 255, 0.03) 60%,
+    rgba(0, 170, 255, 0.01) 100%,
+    transparent 100%
+  );
+  border-radius: 50%; /* Ensure it's circular */
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 1;
+  z-index: 1;
+}
 
-      background: radial-gradient(
-        circle,
-        rgba(0, 170, 255, 0.15) 0%,
-        rgba(0, 170, 255, 0.05) 30%,
-        rgba(0, 170, 255, 0.03) 60%,
-        rgba(0, 170, 255, 0.01) 100%,
-        transparent 100%
-      );
-      border-radius: 50%; /* Keep the glow circular */
-      pointer-events: none;
-      transition: opacity 0.2s ease-out;
-      opacity: 1;
-      z-index: 1; /* Ensure this is below the text and info containers */
-    }
     
     .glow-effect {
     /* Adjust the transform to take the element size into account */
