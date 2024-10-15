@@ -109,6 +109,7 @@ target.scrollIntoView({ behavior: 'smooth' });
     display: flex;
     flex-direction: row;
     max-width: 1200px;
+    height: 100vh; /* Ensure the main container fills the viewport height */
     margin: 0 auto;
     overflow: hidden; /* Prevent both horizontal and vertical overflow */
 }
@@ -189,7 +190,7 @@ target.scrollIntoView({ behavior: 'smooth' });
 
 .info-container {
   width: 50%; /* Fixed width for info */
-  height: 100vh;
+  max-height: 100vh; /* Limit the height to viewport */
   text-align: left; /* Align text to the left */
   padding: 2rem; /* Add padding for spacing */
   overflow-y: scroll; /* Keep vertical scrolling enabled */
@@ -216,10 +217,15 @@ h2 {
 }
 
 .paragraph {
-  font-size: 1.0 rem; /* Smaller subtitle size */
+  font-family: 'Inter', sans-serif;
+  font-size: 1.0rem; /* Smaller subtitle size */
   color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
   margin-top: 20px; /* No extra margin */
+  font-family: 'Inter', sans-serif; /* Modern, clean typeface */
+  line-height: 1.6; /* Increased leading for roomier text */
+  letter-spacing: -0.02em; /* Slightly tightened tracking */
 }
+
 
 .bold-link {
     text-decoration: none;
@@ -342,11 +348,12 @@ p {
   }
 
     .main-container {
+        display: flex;
         flex-direction: column;
+        height: 100vh; /* Ensure the main container fills the viewport height */
         width: 100%;
-        margin: 20px 0;
-        overflow-x: hidden; /* Prevent horizontal overflow on mobile */
-    }
+        margin: 0 auto;
+        overflow: hidden; /* Prevent both horizontal and vertical overflow */    }
 
   .container {
     width: 100%; /* Each container takes full width */
@@ -356,6 +363,7 @@ p {
 
   .text-container,
   .info-container {  
+    max-height: 100vh;
         width: 100%;
         padding: 20px;
         margin: 0;
