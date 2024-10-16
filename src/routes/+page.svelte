@@ -380,11 +380,11 @@
         .glow-effect {
             width: 60vw; /* Adjust width to be more responsive */
             height: 60vw;
-
+        }
       .social-links {
         justify-content: flex-start; /* Align social links to the left */
         margin-left: 10px; /* Add a little margin for space from the edge */
-      }
+      } 
     
       /* Adjust icon size for smaller screens */
       .social-links i {
