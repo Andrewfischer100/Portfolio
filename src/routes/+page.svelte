@@ -453,7 +453,7 @@
     
     <section id="experience">
         {#each experiences as exp (exp.positionTitle)} <!-- Keying by positionTitle -->
-            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div -->
+            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
                 <ExperienceCard 
                     startDate={exp.startDate}
                     endDate={exp.endDate}
@@ -475,7 +475,7 @@
     
       <section id="projects">
         {#each projects as project (project.title)} <!-- Keying by project title -->
-            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div -->
+            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
                 <ProjectCard 
                     title={project.title}
                     description={project.description}
@@ -483,11 +483,10 @@
                     skills={project.skills}
                     repoUrl={project.link}
                 />
-            </div> <!-- Close the div wrapping the ProjectCard -->
-        {/each} <!-- Close the each block -->
+            </div>
+        {/each}
     </section>
-        <a href="https://github.com/Andrewfischer100"  class="bold-link" target="_blank"> View my Github <i class="fa-solid fa-arrow-up-right-from-square"></i> </a>
-    </div> 
+    
     
     
     
