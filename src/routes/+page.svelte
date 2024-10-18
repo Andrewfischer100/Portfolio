@@ -383,9 +383,8 @@
         }
       .social-links {
         justify-content: flex-start; /* Align social links to the left */
-        margin-left: 10px; /* Add a little margin for space from the edge */
         padding-top: 10px;
-        scale: 50%;
+        scale: 80%;
     } 
     .nav a {
    
