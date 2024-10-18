@@ -357,9 +357,11 @@
 .social-links a:hover::before {
     opacity: 1; /* Show the shadow/glow on hover */
 }
-@media (max-width: 768px) {
+ /* Mobile-specific styles */
+ @media (max-width: 768px) {
         .main-container {
             flex-direction: column;
+            overflow-y: auto; /* Single scroll for the entire container */
         }
 
         .container {
@@ -368,27 +370,28 @@
 
         .info-container {
             width: 100%;
-            max-height: 40vh;
             padding: 1rem;
-            overflow-y: scroll;
-        }
-
-        .glow-effect {
-            position: absolute; /* Static in background */
-            width: 100vw;
-            height: 100vh;
-            opacity: 0.2; /* Faint glow */
-            transform: none; /* Remove mouse tracking */
-        }
-
-        .social-links {
-            justify-content: flex-start;
-            padding-top: 10px;
-            scale: 80%;
+            max-height: none; /* Remove max-height for mobile */
+            overflow-y: visible; /* No scroll for the independent container */
         }
 
         .nav a {
-            font-size: 2em;
+            font-size: 1.5em; /* Adjust font size for smaller screens */
+        }
+
+        /* Disable hover effects */
+        .nav li:hover::before,
+        .nav a:hover,
+        .social-links a:hover {
+            transform: none;
+            color: rgba(238, 196, 255, 0.8); /* Use the default color */
+        }
+
+        .glow-effect {
+            width: 60vw;
+            height: 60vw;
+            position: absolute;
+            opacity: 1; /* Keep it as a static background */
         }
     }
 </style>
