@@ -475,7 +475,7 @@
     
       <section id="projects">
         {#each projects as project (project.title)} <!-- Keying by project title -->
-            <div> <!-- Wrap with a div for the fly transition -->
+            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
                 <ProjectCard 
                     title={project.title}
                     description={project.description}
