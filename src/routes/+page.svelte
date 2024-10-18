@@ -384,13 +384,17 @@
       .social-links {
         justify-content: flex-start; /* Align social links to the left */
         margin-left: 10px; /* Add a little margin for space from the edge */
-      } 
+        padding-top: 10px;
+        scale: 50%;
+    } 
+    .nav a {
+   
+        font-size: 2em;
+  
     
-      /* Adjust icon size for smaller screens */
-      .social-links i {
-        scale: 200%; /* Reduce the size of the icons on smaller screens */
-      }
+ 
     }
+}
     
     
     </style>
