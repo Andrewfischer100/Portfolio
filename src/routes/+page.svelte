@@ -465,7 +465,7 @@
     
     
     
-      <a href="/images/resume_AF.pdf" id="resume_link"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
+      <a href="/images/resumeAF.pdf" id="resume_link"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
     <br><br>
       <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
     
