@@ -357,46 +357,41 @@
 .social-links a:hover::before {
     opacity: 1; /* Show the shadow/glow on hover */
 }
-    @media (max-width: 768px) {
-      * {
-          box-sizing: border-box; /* Ensure padding is included in width calculations */
-      }
-    
-      .main-container {
+@media (max-width: 768px) {
+        .main-container {
             flex-direction: column;
         }
 
         .container {
             width: 100%;
         }
-    
+
         .info-container {
-            width: 100%; /* Full width for small screens */
-            max-height: 40vh; /* Set a max-height for the container */
+            width: 100%;
+            max-height: 40vh;
             padding: 1rem;
-            overflow-y: scroll; /* Enable vertical scrolling */
+            overflow-y: scroll;
         }
-    
+
         .glow-effect {
-            width: 60vw; /* Adjust width to be more responsive */
-            height: 60vw;
+            position: absolute; /* Static in background */
+            width: 100vw;
+            height: 100vh;
+            opacity: 0.2; /* Faint glow */
+            transform: none; /* Remove mouse tracking */
         }
-      .social-links {
-        justify-content: flex-start; /* Align social links to the left */
-        padding-top: 10px;
-        scale: 80%;
-    } 
-    .nav a {
-   
-        font-size: 2em;
-  
-    
- 
+
+        .social-links {
+            justify-content: flex-start;
+            padding-top: 10px;
+            scale: 80%;
+        }
+
+        .nav a {
+            font-size: 2em;
+        }
     }
-}
-    
-    
-    </style>
+</style>
     
     <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
