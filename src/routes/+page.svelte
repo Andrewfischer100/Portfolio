@@ -98,119 +98,157 @@
         margin: 0;
         padding: 0;
         background-color: rgba(0, 0, 0, 0.07); /* light gray background */
-        color: rgb(0, 252, 134);
+        color: #006400;
                 font-family: 'Roboto', sans-serif;
-        min-height: 100vh;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-        overflow-y: auto; /* Allow vertical scrolling */
         width: 100%;
     }
     
     
     .main-container {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    min-height: 100vh; /* Changed from height: 100vh to min-height */
-    margin: 0 auto;
-    overflow-y: auto; /* Allow scrolling when content exceeds height */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: left;
+  width: 100%;
+  padding: 100px;
+  box-sizing: border-box;
 }
-    
-.container {
-    width: 50%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    overflow: hidden; /* Ensure no child elements overflow */
-}
-    
-    
-    .nav {
-        display: flex;
-        flex-direction: column;
-        z-index: 3;
-        margin-top: -30px;
-        padding-left: 30px;
-    }
-    
-    .nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .nav li {
-        margin: 10px 0;
-        position: relative;
-    }
-    
-    .nav a {
-        color: rgb(0, 252, 134);
-        text-decoration: none;
-        font-size: 1em;
-        transition: color 0.3s, transform 0.3s, padding-left 0.3s;
-        padding-left: 10px;
-    }
-    .nav a.active {
-        color: rgba(68, 0, 95, 0.445);
-        font-weight: bold;
-    }
-    
-    .nav a:hover {
-        color: rgba(0, 170, 255, 1); /* Change to greenish blue on hover */
-    }
-    
-    /* Pseudo-element for the line */
-    .nav li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 0px;
-        height: 1%;
-        background-color: rgba(238, 196, 255, 0.8);
-        transform: translateY(-50%);
-        transition: width 0.3s;
-    }
-    
-    .nav li:hover::before {
-        width: 50px; /* Expand the line to full width on hover */
-    }
-    
-    .nav li:hover a {
-        padding-left: 60px; /* Increase padding on hover to shift text to the right */
-    }
-    
-    .links-container {
-        display: flexbox;
-        float: right;
-        margin-top:20px;
-        margin-left: auto;
-        text-align: left;
-    }
 
+/* Keep the container layout as it is */
+.container {
+  display: flex;
+  flex-direction: row; /* Keeps text-container and links-container side by side */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Controls max width of the container */
+  margin-bottom: 20px; /* Adds space below the container */
+}
+
+.text-container {
+  flex: 1; /* Takes up the left half */
+  padding-right: 20px;
+}
+
+.links-container {
+  margin-left: 200px;
+  flex: 1; /* Takes up the right half */
+  text-align: left; /* Aligns text to the left */
+  display: flex;
+  flex-direction: column; /* Aligns text vertically */
+  justify-content: center; /* Vertically centers content within links-container */
+
+}
+
+/* Nav */
+.nav {
+  width: 100%;
+  max-width: 1200px; /* Keeps the nav aligned with the container */
+  text-align: left; /* Centers the nav items */
+  margin-bottom: 20px; /* Adds space below the nav */
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin: 10px 0;
+  position: relative;
+}
+
+.nav a {
+  color: #006400;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s, transform 0.3s, padding-left 0.3s;
+  padding-left: 10px;
+}
+
+.nav a.active {
+  color: rgba(68, 0, 95, 0.445);
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: rgba(0, 170, 255, 1); /* Change to greenish blue on hover */
+}
+
+/* Pseudo-element for the line */
+.nav li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0px;
+  height: 1%;
+  background-color: rgba(238, 196, 255, 0.8);
+  transform: translateY(-50%);
+  transition: width 0.3s;
+}
+
+.nav li:hover::before {
+  width: 50px; /* Expand the line to full width on hover */
+}
+
+.nav li:hover a {
+  padding-left: 60px; /* Increase padding on hover to shift text to the right */
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center; /* Center the social links */
+  margin: 20px 0; /* Space around social links, adjusted to center vertically */
+  z-index: 3; /* Ensure this is above the glow effect */
+}
+
+.social-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Align items horizontally */
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #006400;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: rgba(0, 170, 255, 1);
+}
+
+.social-links i {
+  font-size: 2rem;
+}
+
+.social-links a:hover::before {
+  opacity: 1;
+}
+
+/* Info Container */
+.info-container {
+  max-height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  overflow-y: auto; /* Changes from scroll to auto for better handling */
+  scrollbar-width: none;
+  margin-bottom: 0; /* Ensures no extra margin at the bottom */
+}
     
-    .text-container {
-      width: 100%; /* Take full width for text */
-      text-align: left; /* Align text to the left */
-      padding: 2rem; /* Padding for spacing */
-    }
-    
-    .info-container {
-      max-height: 100vh; /* Limit the height to viewport */
-      text-align: left; /* Align text to the left */
-      padding: 2rem; /* Add padding for spacing */
-      overflow-y: scroll; /* Keep vertical scrolling enabled */
-      scrollbar-width: none; /* For Firefox */
-     
-    }
-    
+section {
+  margin: 0; /* Reset margin between sections */
+  padding: 0; /* Reset padding if needed */
+}
     
     
     h1 {
-        color: rgb(0, 252, 134);
+        color: #006400;
 
       font-size: 3.25rem; /* Title size */
       margin: 0;
@@ -218,7 +256,7 @@
     
     h2 {
       font-size: 2.5rem; /* Subtitle size */
-      color: rgb(0, 252, 134);
+      color: #006400;
       /* Subtitle color */
         margin-bottom: 10px; /* Space below subtitles */
       margin: 0.5rem 0; /* Space between title and subtitle */
@@ -227,7 +265,7 @@
     .paragraph {
       font-family: 'Inter', sans-serif;
       font-size: 1.0rem; /* Smaller subtitle size */
-      color: rgb(0, 252, 134);
+      color: #006400;
 
        /* Light color with transparency */
       margin-top: 20px; /* No extra margin */
@@ -241,17 +279,17 @@
     #resume_link {
         display: inline-block;
         padding: 10px 15px;
-        border: 2px solid rgb(0, 255, 191);
+        border: 2px solid #006400;
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        color: rgb(0, 255, 191);
+        color: #006400;
 
         transition: all 0.3s ease;
     }
     
     #resume_link:hover {
-        background-color: rgb(0, 255, 191);
+        background-color: #006400;
 
         color: whitesmoke;
         border-color: rgba(255, 255, 255, 0.226);
@@ -261,20 +299,20 @@
     #portfolio_link {
         display: inline-block;
         padding: 10px 15px;
-        border: 2px solid rgb(0, 255, 191);
+        border: 2px solid#006400;
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        color: rgb(0, 255, 191);
+        color: #006400;
 
         transition: all 0.3s ease;
     }
     
     #portfolio_link:hover {
-        background-color: rgb(0, 255, 191);
+        background-color: #006400;
 
 color: whitesmoke;
-border-color: rgba(255, 255, 255, 0.226);
+border-color: #006400;
     }
     
     /* Icon styling (optional) */
@@ -287,50 +325,11 @@ border-color: rgba(255, 255, 255, 0.226);
       font-size: 1.2rem; /* Adjust font size for the paragraph */
       line-height: 1.5; /* Line height for readability */
     }
-    
-/* Social Links */
-.social-links {
-    display: flex; /* Flexbox for horizontal alignment */
-    justify-content: center; /* Center the social links */
-    margin: 20px 20px; /* Space around social links */
-    z-index: 3; /* Ensure this is above the glow effect */
-}
-
-.social-links ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    display: flex; /* Align items horizontally */
-}
-
-.social-links a {
-    margin: 0 10px; /* Space between social links */
-    color: rgb(0, 252, 134);
-    text-decoration: none; /* Remove underline */
-    padding: 10px; /* Reduced padding to limit hover bleed */
-    position: relative; /* Relative positioning for pseudo-elements */
-    transition: color 0.3s ease; /* Smooth transition for color only */
-}
-
-/* Change color to greenish blue on hover */
-.social-links a:hover {
-    color: rgba(0, 170, 255, 1); /* Change to greenish blue on hover */
-}
-
-/* Icon Styling */
-.social-links i {
-    font-size: 2rem; /* Use font size to control icon size */
-}
-
-
-.social-links a:hover::before {
-    opacity: 1; /* Show the shadow/glow on hover */
-}
+  
  /* Mobile-specific styles */
  @media (max-width: 768px) {
         .main-container {
             flex-direction: column;
-            overflow-y: auto; /* Single scroll for the entire container */
         }
 
         .container {
@@ -341,7 +340,6 @@ border-color: rgba(255, 255, 255, 0.226);
             width: 100%;
             padding: 1rem;
             max-height: none; /* Remove max-height for mobile */
-            overflow-y: visible; /* No scroll for the independent container */
         }
 
         .nav a {
@@ -370,76 +368,67 @@ border-color: rgba(255, 255, 255, 0.226);
     </head>
     
     <!-- svelte-ignore a11y-no-redundant-roles -->
-    <section class="main-container" on:mousemove={handleMouseMove} role="region">
-    <div class="glow-effect" style="--mouseX: {mouseX}px; --mouseY: {mouseY}px;"></div>
-    
+    <section class="main-container" role="region">    
     <div class="container">
+        
+      
         <div class="text-container">
             <h1>Andrew Fischer</h1> <!-- Replace with your name -->
             <h2>Full Stack Developer & Designer</h2> <!-- Replace with your subtitle -->
             <p class="paragraph">Creative designer capable of building company assets and business collateral as well as hand developing functional code for your website or application. </p> <!-- Replace with your transparent subtitle -->
+            <div class="nav">
+                <ul>
+                  <li><a href="#about" on:click={() => handleNavClick('about')} class:active={activeSection === 'about'}>ABOUT</a></li>
+                  <li><a href="#experience" on:click={() => handleNavClick('experience')} class:active={activeSection === 'experience'}>EXPERIENCE</a></li>
+                  <li><a href="#projects" on:click={() => handleNavClick('projects')} class:active={activeSection === 'projects'}>PROJECTS</a></li>
+                </ul>
+              </div>
+                  <!-- Social Links -->
+                  <div class="social-links">
+                    <ul>
+                      <li><a href="https://www.instagram.com/AndrewFischer100" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                      <li><a href="https://github.com/Andrewfischer100" target="_blank"><i class="fab fa-github"></i></a></li>
+                      <li><a href="https://www.linkedin.com/in/afischer100" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                      <li><a href="https://afisch2014315a.myportfolio.com/" target="_blank"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                  </div>
         </div>
     
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="#about" on:click={() => handleNavClick('about')} class:active={activeSection === 'about'}>ABOUT</a>
-                </li>
-                <li>
-                    <a href="#experience" on:click={() => handleNavClick('experience')} class:active={activeSection === 'experience'}>EXPERIENCE</a>
-                </li>
-                <li>
-                    <a href="#projects" on:click={() => handleNavClick('projects')} class:active={activeSection === 'projects'}>PROJECTS</a>
-                </li>
-            </ul>
+       
+
             
 
-             <!-- Resume and Portfolio Links -->
-             <div class="links-container">
-                <a href="/images/resumeAF.pdf" id="resume_link" class="bold-link" target="_blank">
-                    View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
-                </a>
-                <br><br>
-                <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link" class="bold-link" target="_blank">
-                    View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
-                </a>
-            </div>
-        </div>
-        
-        
-    
-        <!-- Social Links -->
-        <div class="social-links">
-            <ul>
-                <li><a href="https://www.instagram.com/AndrewFischer100" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://github.com/Andrewfischer100" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/afischer100" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://afisch2014315a.myportfolio.com/" target="_blank"><i class="fab fa-behance"></i></a></li>
-            </ul>
-        
-        </div>
+            <!-- Resume and Portfolio Links -->
+    <div class="links-container">
+        <a href="/images/resumeAF.pdf" id="resume_link" class="bold-link" target="_blank">
+          View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
+        </a>
+        <br><br>
+        <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link" class="bold-link" target="_blank">
+          View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
+        </a>
+      </div>
     </div>
-</section>
+  </section>
+
 
 
 <div class="info-container">
-    <!-- Experience Section -->
-    <section id="experience">
-      {#each experiences as exp (exp.positionTitle)} <!-- Keying by positionTitle -->
-        <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
-          <ExperienceCard 
-            startDate={exp.startDate}
-            endDate={exp.endDate}
-            positionTitle={exp.positionTitle}
-            companyName={exp.companyName}
-            description={exp.description}
-            skills={exp.skills}
-          />
-        </div>
-      {/each}
-    </section>
-    
-
+  <section id="experience">
+    {#each experiences as exp (exp.positionTitle)}
+      <div transition:fly={{ y: -50, duration: 300 }}>
+        <ExperienceCard 
+          startDate={exp.startDate}
+          endDate={exp.endDate}
+          positionTitle={exp.positionTitle}
+          companyName={exp.companyName}
+          description={exp.description}
+          skills={exp.skills}
+        />
+      </div>
+    {/each}
+  </section>
+</div>
   
     <!-- Projects Section -->
     <section id="projects">
@@ -454,5 +443,4 @@ border-color: rgba(255, 255, 255, 0.226);
           />
         </div>
       {/each}
-    </section>
-  </div> <!-- This closes the <div class="info-container"> -->
+    </section> 
