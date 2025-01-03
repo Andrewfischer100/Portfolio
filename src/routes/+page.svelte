@@ -97,9 +97,9 @@
     :global(body) {
         margin: 0;
         padding: 0;
-        background-color: #1a0731; /* Dark blue-purple background */
-        color: #f6fbfd; /* Azure blue text */
-        font-family: 'Roboto', sans-serif;
+        background-color: rgba(0, 0, 0, 0.07); /* light gray background */
+        color: rgb(0, 252, 134);
+                font-family: 'Roboto', sans-serif;
         min-height: 100vh;
         overflow-x: hidden; /* Prevent horizontal scrolling */
         overflow-y: auto; /* Allow vertical scrolling */
@@ -121,7 +121,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     overflow: hidden; /* Ensure no child elements overflow */
 }
@@ -147,19 +147,19 @@
     }
     
     .nav a {
-        color: rgba(238, 196, 255, 0.8);
+        color: rgb(0, 252, 134);
         text-decoration: none;
         font-size: 1em;
         transition: color 0.3s, transform 0.3s, padding-left 0.3s;
         padding-left: 10px;
     }
     .nav a.active {
-        color: rgb(255, 255, 255);
+        color: rgba(68, 0, 95, 0.445);
         font-weight: bold;
     }
     
     .nav a:hover {
-        color: rgb(255, 255, 255);
+        color: rgba(0, 170, 255, 1); /* Change to greenish blue on hover */
     }
     
     /* Pseudo-element for the line */
@@ -183,38 +183,43 @@
         padding-left: 60px; /* Increase padding on hover to shift text to the right */
     }
     
+    .links-container {
+        display: flexbox;
+        float: right;
+        margin-top:20px;
+        margin-left: auto;
+        text-align: left;
+    }
+
     
     .text-container {
       width: 100%; /* Take full width for text */
       text-align: left; /* Align text to the left */
       padding: 2rem; /* Padding for spacing */
-      z-index: 2; /* Ensure this is above the glow effect */
     }
     
     .info-container {
-      width: 50%; /* Fixed width for info */
       max-height: 100vh; /* Limit the height to viewport */
       text-align: left; /* Align text to the left */
       padding: 2rem; /* Add padding for spacing */
       overflow-y: scroll; /* Keep vertical scrolling enabled */
       scrollbar-width: none; /* For Firefox */
-      z-index: 2; /* Ensure this is above the glow effect */
+     
     }
     
-    /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
-    .info-container::-webkit-scrollbar {
-      display: none; /* Hide the scrollbar */
-    }
     
     
     h1 {
+        color: rgb(0, 252, 134);
+
       font-size: 3.25rem; /* Title size */
       margin: 0;
     }
     
     h2 {
       font-size: 2.5rem; /* Subtitle size */
-      color: #f6fbfd; /* Subtitle color */
+      color: rgb(0, 252, 134);
+      /* Subtitle color */
         margin-bottom: 10px; /* Space below subtitles */
       margin: 0.5rem 0; /* Space between title and subtitle */
     }
@@ -222,39 +227,33 @@
     .paragraph {
       font-family: 'Inter', sans-serif;
       font-size: 1.0rem; /* Smaller subtitle size */
-      color: rgba(240, 229, 252, 0.6); /* Light color with transparency */
+      color: rgb(0, 252, 134);
+
+       /* Light color with transparency */
       margin-top: 20px; /* No extra margin */
       font-family: 'Inter', sans-serif; /* Modern, clean typeface */
       line-height: 1.6; /* Increased leading for roomier text */
       letter-spacing: -0.02em; /* Slightly tightened tracking */
     }
     
-    
-    .bold-link {
-        text-decoration: none;
-        color: aliceblue;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition for both color and underline */
-    }
-    
-    .bold-link:hover {
-        color: rgb(0, 252, 134);
-    }
-    
+     
     /* Styles for the resume link */
     #resume_link {
         display: inline-block;
         padding: 10px 15px;
-        border: 1px solid rgb(0, 255, 191);
+        border: 2px solid rgb(0, 255, 191);
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        color: #ffffff;
+        color: rgb(0, 255, 191);
+
         transition: all 0.3s ease;
     }
     
     #resume_link:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: rgb(0, 255, 191);
+        background-color: rgb(0, 255, 191);
+
+        color: whitesmoke;
         border-color: rgba(255, 255, 255, 0.226);
     }
     
@@ -262,18 +261,20 @@
     #portfolio_link {
         display: inline-block;
         padding: 10px 15px;
-        border: 1px solid rgb(0, 255, 191);
+        border: 2px solid rgb(0, 255, 191);
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        color: #ffffff;
+        color: rgb(0, 255, 191);
+
         transition: all 0.3s ease;
     }
     
     #portfolio_link:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: rgb(0, 255, 191);
-        border-color: rgba(255, 255, 255, 0.226);
+        background-color: rgb(0, 255, 191);
+
+color: whitesmoke;
+border-color: rgba(255, 255, 255, 0.226);
     }
     
     /* Icon styling (optional) */
@@ -281,38 +282,6 @@
         margin-left: 5px; /* Adds space between the text and icon */
     }
     
-    
-    
-    .glow-effect {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40vw; /* Equal width and height for a circle */
-  height: 40vw; /* Match the width to maintain a circular shape */
-  overflow: hidden;
-  background: radial-gradient(
-    circle,
-    rgba(0, 170, 255, 0.15) 0%,
-    rgba(0, 170, 255, 0.05) 30%,
-    rgba(0, 170, 255, 0.03) 60%,
-    #1a0731 100%,
-    transparent 100%
-  );
-  border-radius: 50%; /* Keep it circular */
-  pointer-events: none;
-  transition: opacity 0.2s ease-out;
-  opacity: 1;
-  z-index: 1;
-  transform: translate(calc(var(--mouseX) - 100vw), calc(var(--mouseY) - 100vw)); /* Adjust based on size */
-}
-
-
-    
-    .glow-effect {
-    /* Adjust the transform to take the element size into account */
-    transform: translate(calc(var(--mouseX) - 50%), calc(var(--mouseY) - 50%));
-}
-
     
     p {
       font-size: 1.2rem; /* Adjust font size for the paragraph */
@@ -336,7 +305,7 @@
 
 .social-links a {
     margin: 0 10px; /* Space between social links */
-    color: rgba(240, 229, 252, 0.6); /* Initial color */
+    color: rgb(0, 252, 134);
     text-decoration: none; /* Remove underline */
     padding: 10px; /* Reduced padding to limit hover bleed */
     position: relative; /* Relative positioning for pseudo-elements */
@@ -424,6 +393,17 @@
                 </li>
             </ul>
             
+
+             <!-- Resume and Portfolio Links -->
+             <div class="links-container">
+                <a href="/images/resumeAF.pdf" id="resume_link" class="bold-link" target="_blank">
+                    View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
+                </a>
+                <br><br>
+                <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link" class="bold-link" target="_blank">
+                    View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i>
+                </a>
+            </div>
         </div>
         
         
@@ -439,55 +419,40 @@
         
         </div>
     </div>
-    
-    <div class="info-container">
-    
-    <div class="short-text">    <p class="paragraph">
-        Welcome to my portfolio! I’m Andrew, an <a href="https://pulitzerarts.org/" class="bold-link" target="_blank">art handler</a> and <a href="https://mohistory.org/museum" class="bold-link" target="_blank">exhibits installation specialist</a> in Saint Louis. I also bartend in the <a href="https://www.seedsproutspoon.com/" class="bold-link" target="_blank">Weddings and Events industry</a>.
-    
-        Previously, I was a Training Manager at UPS, where I combined my education background with my passion for design. In 2023, I completed a <a href="https://www.launchcode.org/" class="bold-link" target="_blank">coding bootcamp</a>, enhancing my technical skills. 
-    
-        In my free time, I enjoy cooking and studying for my personal training certificate. Thank you for visiting my portfolio!
-    </p>
-    </div>
-    
+</section>
+
+
+<div class="info-container">
+    <!-- Experience Section -->
     <section id="experience">
-        {#each experiences as exp (exp.positionTitle)} <!-- Keying by positionTitle -->
-            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
-                <ExperienceCard 
-                    startDate={exp.startDate}
-                    endDate={exp.endDate}
-                    positionTitle={exp.positionTitle}
-                    companyName={exp.companyName}
-                    description={exp.description}
-                    skills={exp.skills}
-                />
-            </div>
-        {/each}
+      {#each experiences as exp (exp.positionTitle)} <!-- Keying by positionTitle -->
+        <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
+          <ExperienceCard 
+            startDate={exp.startDate}
+            endDate={exp.endDate}
+            positionTitle={exp.positionTitle}
+            companyName={exp.companyName}
+            description={exp.description}
+            skills={exp.skills}
+          />
+        </div>
+      {/each}
     </section>
     
-    
-    
-      <a href="/images/resumeAF.pdf" id="resume_link"  class="bold-link" target="_blank"> View my full resume here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
-    <br><br>
-      <a href="https://afisch2014315a.myportfolio.com/" id="portfolio_link"  class="bold-link" target="_blank"> View my Design Portfolio here <i class="fa-solid fa-arrow-up-right-from-square" id="arrows"></i> </a>
-    
-    
-      <section id="projects">
-        {#each projects as project (project.title)} <!-- Keying by project title -->
-            <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
-                <ProjectCard 
-                    title={project.title}
-                    description={project.description}
-                    imageUrl={project.imageUrl}
-                    skills={project.skills}
-                    repoUrl={project.link}
-                />
-            </div>
-        {/each}
+
+  
+    <!-- Projects Section -->
+    <section id="projects">
+      {#each projects as project (project.title)} <!-- Keying by project title -->
+        <div transition:fly={{ y: -50, duration: 300 }}> <!-- Wrap with a div for the fly transition -->
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+            skills={project.skills}
+            repoUrl={project.link}
+          />
+        </div>
+      {/each}
     </section>
-    
-    
-    
-    
-    </section>
+  </div> <!-- This closes the <div class="info-container"> -->

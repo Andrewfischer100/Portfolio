@@ -19,13 +19,13 @@
 }
 
 .card:hover {
-    background: rgba(255, 255, 255, 0.04); /* Slightly darker background on hover */
+    background: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 .title, .company {
     font-size:medium;
-    color: #f6fbfd;
+    color: rgb(0, 252, 134);
     margin: 0;
     line-height: 1.2;
     transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
@@ -66,7 +66,7 @@
 
     .dates {
         font-size:smaller;
-        color: rgba(150, 208, 238, 0.8);
+        color: rgb(0, 252, 134);
         margin-top: 0; /* Ensures the dates align with the top of the title */
     }
 
@@ -78,6 +78,8 @@
 
 
     .description {
+        color: rgb(0, 252, 134);
+
         font-size: small;
     }
 

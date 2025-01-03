@@ -18,7 +18,7 @@
 }
 
 .project-card:hover {
-    background: rgba(255, 255, 255, 0.04); /* Slightly darker background on hover */
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly darker background on hover */
 }
 
 .header {
@@ -39,7 +39,7 @@
 
 .title {
     font-size: medium;
-    color: #f6fbfd;
+    color: rgb(0, 252, 134);
     margin: 0; /* Remove extra space around the title */
     line-height: 1.2; /* Adjust line height to align properly with the image */
     transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out; /* Smooth transition for both color and underline */
@@ -51,7 +51,7 @@
 
 .description {
     font-size: smaller;
-    color: rgba(246, 237, 252, 0.425);
+    color: rgb(0, 252, 134);
     margin: 10px 0 12px; /* Space above and below description */
     line-height: 135%;
 }
